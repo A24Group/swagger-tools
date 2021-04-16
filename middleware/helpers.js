@@ -199,7 +199,7 @@ var convertValue = module.exports.convertValue = function (value, schema, type, 
           value = original;
         }
 
-        if (value == Infinity) {
+        if (typeof value === 'number') {
           value = original;
         }
 
