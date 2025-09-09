@@ -1,0 +1,8 @@
+version: '3.3'
+services:
+  swagger-tools:
+    image: swagger-tools
+    container_name: swagger-tools
+    command: 'sh -c "npm run test"'
+    environment:
+    - NODE_ENV=ci
