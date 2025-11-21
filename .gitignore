@@ -8,3 +8,7 @@ test/1.2/test-specs-browser.js
 test/2.0/test-specs-browser.js
 test/*/browser
 .tern-project
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore

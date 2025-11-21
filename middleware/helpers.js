@@ -199,8 +199,14 @@ var convertValue = module.exports.convertValue = function (value, schema, type, 
           value = original;
         }
 
+        // If JSON.parse converted to a number, check if original was a MongoDB ObjectId
         if (typeof value === 'number') {
-          value = original;
+          // MongoDB ObjectId pattern: 24 hex characters
+          var isObjectId = /^[0-9a-fA-F]{24}$/.test(original);
+          if (isObjectId) {
+            value = original; // Keep ObjectIds as strings
+          }
+          // Otherwise keep the number (legitimate numeric value)
         }
 
         if (_.isString(value)) {
